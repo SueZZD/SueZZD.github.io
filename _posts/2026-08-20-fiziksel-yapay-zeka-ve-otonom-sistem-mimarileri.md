@@ -12,10 +12,6 @@ author: "Sueda Zeynep Demirtaş"
 
 <div align="center">
 
-[![Status](https://img.shields.io/badge/Status-Completed-brightgreen.svg)]()
-[![Field](https://img.shields.io/badge/Field-Robotics_%26_Autonomous_Systems-blue.svg)]()
-[![Author](https://img.shields.io/badge/Author-Sueda_Zeynep_Demirtas-orange.svg)]()
-
 </div>
 
 ---
@@ -27,12 +23,12 @@ Aklımızda daha iyi yer etmesi için önce günümüzde sıklıkla kullandığ�
 <img width="239" height="212" alt="image" src="https://github.com/user-attachments/assets/95798b17-6784-49d5-bba0-252cac89df48" />
 
 ### Geleneksel YZ vs. Fiziksel YZ
-| Kriter | Geleneksel Yapay Zeka | Fiziksel Yapay Zeka |
+Kriter | Geleneksel Yapay Zeka | Fiziksel Yapay Zeka 
 | :--- | :--- | :--- |
-| **Faaliyet Ortamı** | Sadece dijital ortamlarda bulunur (örn. LLM, veri analitiği). | Hem dijital hem de fiziksel alanlarda faaliyet gösterir. |
-| **Veri İşleme** | Statik/asenkron metinler, görüntüler ve dijital loglar. | Gerçek dünyada dinamik sensör akışı ve fiziksel etkileşim. |
-| **Çıktı Formatı** | Bilgi, metin üretimi veya sanal tahminler. | Tork değerleri, motor akımları ve mekanik yönlendirme komutları. |
-| **Otonomi** | İnsan yönlendirmesine tabidir. | Gerçek zamanlı otonom karar alır. |
+ **Faaliyet Ortamı** | Sadece dijital ortamlarda bulunur (örn. LLM, veri analitiği). | Hem dijital hem de fiziksel alanlarda faaliyet gösterir. 
+ **Veri İşleme** | Statik/asenkron metinler, görüntüler ve dijital loglar. | Gerçek dünyada dinamik sensör akışı ve fiziksel etkileşim. 
+ **Çıktı Formatı** | Bilgi, metin üretimi veya sanal tahminler. | Tork değerleri, motor akımları ve mekanik yönlendirme komutları. 
+ **Otonomi** | İnsan yönlendirmesine tabidir. | Gerçek zamanlı otonom karar alır. 
 
 ---
 
