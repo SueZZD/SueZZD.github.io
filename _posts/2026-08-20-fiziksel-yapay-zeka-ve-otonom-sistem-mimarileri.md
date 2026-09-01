@@ -7,6 +7,7 @@ author: "Sueda Zeynep Demirtaş"
 ---
 
 
+
 # Physical AI (Fiziksel Yapay Zeka) ve Otonom Sistem Mimarileri
 
 <div align="center">
