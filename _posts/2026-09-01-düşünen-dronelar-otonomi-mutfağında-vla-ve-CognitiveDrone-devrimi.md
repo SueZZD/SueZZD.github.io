@@ -51,7 +51,11 @@ Klasik otonom İHA yaklaşımları (RaceVLA gibi salt yarış odaklı modeller d
   * **Akıl Yürütme Modeli (Reasoner - Sistem 2):** Ortamı ve karmaşık yönergeyi analiz edip Düşünce Zinciri (Chain-of-Thought / CoT) ile ara çıkarımlar üreten 7B parametreli bir VLM muhakeme modülü (~2 Hz).
   * **Eylem Modeli (Controller / Executor - Sistem 1):** Birinci modülden gelen sadeleştirilmiş mantıksal hedefi alıp 10 Hz'de dinamik uçuş komutlarına dönüştüren 7B OpenVLA tabanlı kontrol modeli.
 
-CognitiveDrone'un Eylem Modeli'nden (Sistem 1) 10 Hz frekansında çıkan 4 boyutlu sürekli eylem vektörleri $v_x, v_y, v_z, \omega$, doğrudan motor sürücülerine iletilmez. Üst düzey otonomi bilgisayarında koşan ROS 2 düğümleri (nodes), hesaplanan bu referans hız ve sapma komutlarını CAN Bus iletişim ağı üzerinden alt seviye Araç Kontrol Ünitesine aktarır. Genellikle C ve C++ ile programlanmış, FreeRTOS tabanlı bir STM32 mikrodenetleyicisinin merkezinde bulunduğu bu VCU; ROS 2'den gelen komutları alır, DMA ile arabelleğe alıp güvenlik filtrelerinden geçirir ve milisaniyelik hassasiyetle fiziksel eyleyicilere dağıtır. Böylece devasa yapay zeka omurgası ile fiziksel donanım arasındaki o kritik köprü, kesintisiz ve deterministik bir şekilde kurulmuş olur.
+<div style="text-align: justify;">
+
+CognitiveDrone’un Eylem Modeli'nden (Sistem 1) 10 Hz frekansında çıkan 4 boyutlu sürekli eylem vektörleri ($v_x, v_y, v_z, \omega$), doğrudan motor sürücülerine iletilmez. Üst düzey otonomi bilgisayarında koşan ROS 2 düğümleri (nodes), hesaplanan bu referans hız ve sapma komutlarını CAN Bus iletişim ağı üzerinden alt seviye Araç Kontrol Ünitesine aktarır. Genellikle C ve C++ ile programlanmış, FreeRTOS tabanlı bir STM32 mikrodenetleyicisinin merkezinde bulunduğu bu VCU; ROS 2'den gelen komutları alır, DMA ile arabelleğe alıp güvenlik filtrelerinden geçirir ve milisaniyelik hassasiyetle fiziksel eyleyicilere dağıtır. Böylece devasa yapay zeka omurgası ile fiziksel donanım arasındaki o kritik köprü, kesintisiz ve deterministik bir şekilde kurulmuş olur.
+
+</div>
 
 Sistem, görevi önce akıl yürütme katmanında çözüp ardından eylem katmanına aktaran iki kademeli (7B + 7B) ardışık bir boru hattı (pipeline) ile çalışır[cite: 1, 2].
 
