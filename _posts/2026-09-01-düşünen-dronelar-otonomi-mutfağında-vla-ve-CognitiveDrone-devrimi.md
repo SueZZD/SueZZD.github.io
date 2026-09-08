@@ -9,12 +9,12 @@
 </div>
 
 ## 📌 İçindekiler
-1. [OpenVLA: Açık Kaynaklı VLA Temel Modeli](#1-openvla-açık-kaynaklı-vla-temel-modeli)
-2. [CognitiveDrone ve CognitiveDrone-R1 Mimarisi](#2-cognitivedrone-ve-cognitivedrone-r1-mimarisi)
-3. [CognitiveDroneBench Test Ortamı ve Veri Kümesi](#3-cognitivedronebench-test-ortamı-ve-veri-kümesi)
-4. [Akıl Yürütme Tabanlı VLA ve UAV Uygulamaları](#4-akıl-yürütme-tabanlı-vla-ve-uav-uygulamaları)
-5. [En İyi VLA Modelleri Kıyaslaması](#5-en-iyi-vla-modelleri-kiyaslaması)
-6. [Kaynakça](#6-kaynakça)
+1. OpenVLA: Açık Kaynaklı VLA Temel Modeli
+2. CognitiveDrone ve CognitiveDrone-R1 Mimarisi
+3. CognitiveDroneBench Test Ortamı ve Veri Kümesi
+4. Akıl Yürütme Tabanlı VLA ve UAV Uygulamaları
+5. En İyi VLA Modelleri Kıyaslaması
+6. Kaynakça
 
 ---
 
