@@ -1,4 +1,4 @@
-# Otonomi Mutfağında VLA ve CognitiveDrone Devrimi
+# Düşünen Dronelar: Otonomi Mutfağında VLA ve CognitiveDrone Devrimi
 
 <div align="center">
 
