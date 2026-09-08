@@ -1,9 +1,12 @@
 ---
 title: "Savunma Sanayiinden Küresel Ölçeğe Otonomi Mimarileri"
 date: 2026-09-01 12:00:00 +0300
-categories: [Araştırma, Savunma Sanayii]
+categories: [Araştırma, Savunma Sanayii, Fiziksel Yapay Zeka]
 tags: [autonomous-systems, defense-industry, edge-ai]
 ---
+
+
+# Savunma Sanayiinden Küresel Ölçeğe Otonomi Mimarileri
 
 <div align="center">
 
@@ -14,13 +17,13 @@ tags: [autonomous-systems, defense-industry, edge-ai]
 </div>
 
 ## 📌 İçindekiler
-* 1. Güncel Savunma Ekosisteminin Stratejik Odakları
-* 2. Türk Savunma Sanayisinde Çoklu Alan Otonomisi ve Dijital Birlik
-* 3. Taktik ve Mini Drone Sistemlerinde Çeşitlilik
-* 4. Otonomi Felsefesi ve Seyrüsefer Algoritmaları
-* 5. Küresel Ölçekte Paradigma Değişimi: Akıl Yürüten İHA'lar
-* 6. Sahadaki Mühendislik Darboğazları: Model Nicelleştirme ve Sensör Füzyonu
-* 7. Kaynakça
+1. Güncel Savunma Ekosisteminin Stratejik Odakları
+2. Türk Savunma Sanayisinde Çoklu Alan Otonomisi ve Dijital Birlik
+3. Taktik ve Mini Drone Sistemlerinde Çeşitlilik
+4. Otonomi Felsefesi ve Seyrüsefer Algoritmaları
+5. Küresel Ölçekte Paradigma Değişimi: Akıl Yürüten İHA'lar
+6. Sahadaki Mühendislik Darboğazları: Model Nicelleştirme ve Sensör Füzyonu
+7. Kaynakça
 
 ---
 
@@ -46,7 +49,7 @@ HAVELSAN tarafından geliştirilen BARKAN 3 İnsansız Kara Aracı (İKA), kara 
 * Modüler silah kulesi sayesinde üzerine entegre edilen füze ve makineli tüfek sistemleri, otonom hedef tespiti ve angajman desteği ile çalışabilmektedir[cite: 2]. Bu sistemlerin EFES ve SAHA gibi saha testleri tamamlanmış olup, TSK envanterine giriş protokolleri aktif olarak yürütülmektedir[cite: 2].
 
 <p align="center">
-  <img width="700" alt="BARKAN 3 İnsansız Kara Aracı" src="https://github.com/user-attachments/assets/95798b17-6784-49d5-bba0-252cac89df48">
+  <img width="700" alt="BARKAN 3 İnsansız Kara Aracı" src="https://github.com/user-attachments/assets/barkan3.jpg">
 </p>
 
 ### Müşterek Dijital Birlik Mimarisi
@@ -67,7 +70,7 @@ Büyük ölçekli İHA'ların yanı sıra, asimetrik harpte dengeleri değiştir
 * **TOGAN & TUNGA-X (Taktik Keşif / Hedefleme):** Optik güdüm teknolojileri ve Edge AI algoritmaları ile donatılmış olan bu dronlar, otomatik hedef sınıflandırması yaparak sınır ve üs bölgelerinin güvenliğini sağlar[cite: 2].
 
 <p align="center">
-  <img width="700" alt="TUNGA-X Avcı Drone Sistemi" src="https://github.com/user-attachments/assets/f95ca9c3-bdb8-449b-90d2-32ff998807ba">
+  <img width="700" alt="TUNGA-X Avcı Drone Sistemi" src="https://github.com/user-attachments/assets/tungax.jpg">
 </p>
 
 * **BARAN & Anti-Drone Sistemleri:** Mikro İHA ve kamikaze drone tehditlerini yapay zeka ile otomatik olarak algılayıp imha eden otonom hava savunma önleme konseptleridir[cite: 2]. 
@@ -75,7 +78,7 @@ Büyük ölçekli İHA'ların yanı sıra, asimetrik harpte dengeleri değiştir
 Bununla birlikte ASELSAN tarafından geliştirilen İHTAR sistemi, TV ve termal kameralardan gelen verileri sensör füzyonu ile birleştirip geliştirilmiş bilgisayarlı görü (computer vision) ile uzak mesafeden drone tehditlerini teşhis, tespit ve takip eden yapay zeka destekli bir karar verme algoritması sunmaktadır[cite: 2].
 
 <p align="center">
-  <img width="700" alt="ASELSAN İHTAR Anti-Drone Sistemi" src="https://github.com/user-attachments/assets/56ce698f-475c-4456-b111-3b1a9ebc0967">
+  <img width="700" alt="ASELSAN İHTAR Anti-Drone Sistemi" src="https://github.com/user-attachments/assets/ihtar.jpg">
 </p>
 
 ---
@@ -171,3 +174,5 @@ Geliştirilen milli yazılım mimarileri; İHA üzerindeki kızılötesi termal 
 [24] Defence Turk, "İngiltere Hava Savunma Sistemlerine Karşı Sürü Drone Kullanacak," DefenceTurk Haber Portalı, 2025. [Çevrimiçi]. Erişim: defenceturk.net[cite: 2]
 
 [25] S. Boddu and A. Mukherjee, "Lightweight Object Detection Using Quantized YOLOv4-Tiny for Emergency Response in Aerial Imagery," arXiv preprint arXiv:2506.09299v1, Jun. 2025. [Çevrimiçi]. Erişim: https://arxiv.org/html/2506.09299v1[cite: 2]
+
+</div>
