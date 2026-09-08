@@ -1,6 +1,6 @@
 ---
 title: "Savunma Sanayiinden Küresel Ölçeğe Otonomi Mimarileri"
-date: 2026-09-01 12:00:00 +0300
+date: 2026-09-03 12:00:00 +0300
 categories: [Araştırma, Savunma Sanayii, Fiziksel Yapay Zeka]
 tags: [autonomous-systems, defense-industry, edge-ai]
 ---
