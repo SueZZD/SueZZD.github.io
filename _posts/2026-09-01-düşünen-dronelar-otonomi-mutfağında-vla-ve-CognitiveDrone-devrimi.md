@@ -1,3 +1,12 @@
+---
+title: "Düşünen Dronelar: Otonomi Mutfağında VLA ve CognitiveDrone Devrimi"
+date: 2026-09-01 12:00:00 +0300
+categories: [Araştırma, Fiziksel Yapay Zeka]
+tags: [autonomous-systems, physical-ai, edge-ai]
+---
+
+<div style="text-align: justify; text-justify: inter-word;">
+
 # Düşünen Dronelar: Otonomi Mutfağında VLA ve CognitiveDrone Devrimi
 
 <div align="center">
@@ -21,7 +30,7 @@
 ## 1. OpenVLA: Açık Kaynaklı VLA Temel Modeli
 VLA ve Reasoning-VLA modellerinin teorik altyapısı detaylıca incelendikten sonra sıradaki adımımız, öne çıkan başarılı modelleri ve bunların entegre edildiği otonom sistemleri ele almaktır. Bu doğrultuda; saf bir eylem omurgası sunan açık kaynaklı OpenVLA temel modelini ve bu modelin önüne bir akıl yürütme katmanı (Reasoner) eklenerek güçlü bir Reasoning-VLA sistemine dönüştürülen CognitiveDrone-R1 mimarisini inceleyeceğiz.
 
-OpenVLA, robotik alanında kullanılmak üzere geliştirilmiş, açık kaynaklı bir VLA temel modelidir. Temel olarak bir robotun çevresini görmesini, kendisine verilen doğal dildeki komutları anlamasını ve bu doğrultuda motor hareketlerini tetikleyecek eylemleri üretmesini sağlar[cite: 5]. Bu model, robotik manipülasyon yeteneklerini geliştirmek amacıyla Stanford Üniversitesi, UC Berkeley, Google DeepMind, Toyota Research Institute (TRI) ve MIT gibi dünyanın önde gelen laboratuvarlarındaki araştırmacılardan oluşan ortak bir konsorsiyum (Moo Jin Kim, Karl Pertsch, Siddharth Karamcheti vb.) tarafından geliştirilmiştir.
+OpenVLA, robotik alanında kullanılmak üzere geliştirilmiş, açık kaynaklı bir VLA temel modelidir. Temel olarak bir robotun çevresini görmesini, kendisine verilen doğal dildeki komutları anlamasını ve bu doğrultuda motor hareketlerini tetikleyecek eylemleri üretmesini sağlar. Bu model, robotik manipülasyon yeteneklerini geliştirmek amacıyla Stanford Üniversitesi, UC Berkeley, Google DeepMind, Toyota Research Institute (TRI) ve MIT gibi dünyanın önde gelen laboratuvarlarındaki araştırmacılardan oluşan ortak bir konsorsiyum (Moo Jin Kim, Karl Pertsch, Siddharth Karamcheti vb.) tarafından geliştirilmiştir.
 
 * **Geliştirilme Süreci:** OpenVLA, sıfırdan bir model eğitmek yerine, internet üzerinde devasa verilerle önceden eğitilmiş güçlü Görsel-Dil Modellerini (VLM) temel alıp, bunları robotik eylemleri tahmin edecek şekilde uçtan uca eğiterek geliştirilmiştir.
 * **Temel Alınan Mimari:** Model, Meta'nın Llama-2 (7B) büyük dil modelini omurga olarak kullanır. Görsel girdileri işlemek için ise mekânsal akıl yürütme sağlayan DINOv2 ile semantik (anlamsal) hizalama sunan SigLIP görsel kodlayıcılarının kombinasyonundan yararlanır. Bu yapı Prismatic VLM çerçevesi altında birleştirilmiştir.
@@ -40,24 +49,16 @@ Günümüzde OpenVLA'in omurga model olarak kullanıldığı, üzerine akıl yü
 ## 2. CognitiveDrone ve CognitiveDrone-R1 Mimarisi
 CognitiveDrone, birinci şahıs görüşü (FPV) kameralarından gelen görsel verileri ve doğal dil talimatlarını doğrudan uçuş kontrol komutlarına dönüştüren, hava robotlarına üst seviye bilişsel karar verme yeteneği kazandırmak amacıyla geliştirilmiş uçtan uca bir Görsel-Dil-Eylem (VLA) mimarisidir.
 
-Klasik otonom İHA yaklaşımları (RaceVLA gibi salt yarış odaklı modeller dahil) yüksek hızlı dinamik uçuşta başarılı olsa da sembol <div style="text-align: justify;">
-
-Klasik otonom İHA yaklaşımları (RaceVLA gibi salt yarış odaklı modeller dahil) yüksek hızlı dinamik uçuşta başarılı olsa da sembol anlama, insan tanıma ve mantıksal çıkarım gibi üst düzey bilişsel görevleri yerine getiremez. CognitiveDrone, bu kısıtları aşmak için 7 milyar parametreli bir VLA modeli kullanır ve doğrudan 4 boyutlu sürekli eylem vektörleri ($v_x, v_y, v_z, \omega$ - üç eksenli hız ve sapma/yaw açısal hızı) üretir. Mimari iki farklı yapılandırmayla sunulmaktadır:
-
-</div>
+Klasik otonom İHA yaklaşımları (RaceVLA gibi salt yarış odaklı modeller dahil) yüksek hızlı dinamik uçuşta başarılı olsa da sembol anlama, insan tanıma ve mantıksal çıkarım gibi üst düzey bilişsel görevleri yerine getiremez. CognitiveDrone, bu kısıtları aşmak için 7 milyar parametreli bir VLA modeli kullanır ve doğrudan 4 boyutlu sürekli eylem vektörleri (v_x, v_y, v_z, ω - üç eksenli hız ve sapma/yaw açısal hızı) üretir. Mimari iki farklı yapılandırmayla sunulmaktadır:
 
 * **CognitiveDrone (Temel Model):** Tek parçalı (monolithic) 7B VLA omurgasıyla görsel-dilsel girdileri doğrudan 10 Hz frekansta reaktif uçuş komutlarına eşler.
 * **CognitiveDrone-R1 (Gelişmiş Model):** Hızlı kontrol ile derin muhakemeyi ayıran çift sistemli (System 1 / System 2) bir yaklaşıma sahiptir:
   * **Akıl Yürütme Modeli (Reasoner - Sistem 2):** Ortamı ve karmaşık yönergeyi analiz edip Düşünce Zinciri (Chain-of-Thought / CoT) ile ara çıkarımlar üreten 7B parametreli bir VLM muhakeme modülü (~2 Hz).
   * **Eylem Modeli (Controller / Executor - Sistem 1):** Birinci modülden gelen sadeleştirilmiş mantıksal hedefi alıp 10 Hz'de dinamik uçuş komutlarına dönüştüren 7B OpenVLA tabanlı kontrol modeli.
 
-<div style="text-align: justify;">
+CognitiveDrone’un Eylem Modeli'nden (Sistem 1) 10 Hz frekansında çıkan 4 boyutlu sürekli eylem vektörleri (v_x, v_y, v_z, ω), doğrudan motor sürücülerine iletilmez. Üst düzey otonomi bilgisayarında koşan ROS 2 düğümleri (nodes), hesaplanan bu referans hız ve sapma komutlarını CAN Bus iletişim ağı üzerinden alt seviye Araç Kontrol Ünitesine aktarır. Genellikle C ve C++ ile programlanmış, FreeRTOS tabanlı bir STM32 mikrodenetleyicisinin merkezinde bulunduğu bu VCU; ROS 2'den gelen komutları alır, DMA ile arabelleğe alıp güvenlik filtrelerinden geçirir ve milisaniyelik hassasiyetle fiziksel eyleyicilere dağıtır. Böylece devasa yapay zeka omurgası ile fiziksel donanım arasındaki o kritik köprü, kesintisiz ve deterministik bir şekilde kurulmuş olur.
 
-CognitiveDrone’un Eylem Modeli'nden (Sistem 1) 10 Hz frekansında çıkan 4 boyutlu sürekli eylem vektörleri ($v_x, v_y, v_z, \omega$), doğrudan motor sürücülerine iletilmez. Üst düzey otonomi bilgisayarında koşan ROS 2 düğümleri (nodes), hesaplanan bu referans hız ve sapma komutlarını CAN Bus iletişim ağı üzerinden alt seviye Araç Kontrol Ünitesine aktarır. Genellikle C ve C++ ile programlanmış, FreeRTOS tabanlı bir STM32 mikrodenetleyicisinin merkezinde bulunduğu bu VCU; ROS 2'den gelen komutları alır, DMA ile arabelleğe alıp güvenlik filtrelerinden geçirir ve milisaniyelik hassasiyetle fiziksel eyleyicilere dağıtır. Böylece devasa yapay zeka omurgası ile fiziksel donanım arasındaki o kritik köprü, kesintisiz ve deterministik bir şekilde kurulmuş olur.
-
-</div>
-
-Sistem, görevi önce akıl yürütme katmanında çözüp ardından eylem katmanına aktaran iki kademeli (7B + 7B) ardışık bir boru hattı (pipeline) ile çalışır[cite: 1, 2].
+Sistem, görevi önce akıl yürütme katmanında çözüp ardından eylem katmanına aktaran iki kademeli (7B + 7B) ardışık bir boru hattı (pipeline) ile çalışır[cite: 1].
 
 <p align="center">
   <img width="700" alt="CognitiveDroneBench Test Sonuçları" src="../assets/CognitiveDrone-2.png">
@@ -69,11 +70,11 @@ Sistem, görevi önce akıl yürütme katmanında çözüp ardından eylem katma
 Modelin eğitimi için üç ana bilişsel kategoriyi kapsayan 8.000'den fazla simüle edilmiş uçuş yörüngesi toplanmıştır:
 * **İnsan Tanıma (Human Recognition):** Giyim, duruş ve tanımlayıcı görsel özelliklere göre hedeflenen kişiyi tespit etme.
 * **Sembol / İşaret Anlama (Symbol Understanding):** Geometrik şekilleri, işaret levhalarını ve yönlendirici sembolleri ayırt etme.
-* **Mantıksal Akıl Yürütme (Reasoning):** Çok adımlı bulmacaları ve bağlamsal yönergeleri çözerek doğru rotayı ve geçiş kapısını belirleme[cite: 1, 3].
+* **Mantıksal Akıl Yürütme (Reasoning):** Çok adımlı bulmacaları ve bağlamsal yönergeleri çözerek doğru rotayı ve geçiş kapısını belirleme[cite: 1].
 
 CognitiveDroneBench testlerinde salt yarış odaklı RaceVLA modeli bilişsel görevlerde %31.3 başarı oranında kalırken; temel CognitiveDrone modeli %59.6, akıl yürütme katmanına sahip CognitiveDrone-R1 ise %77.2 genel başarı oranına ulaşarak muhakeme yeteneğinin önemini doğrulamıştır.
 
-Açık kaynaklı olarak sunulan CognitiveDroneBench, ROS ve Gazebo simülasyonu üzerinde inşa edilmiştir. İHA, klasik yarış kapılarından oluşan parkurda ilerlerken her kapı ayrımında karşısına çıkan görsel-bilişsel görevi doğru çözüp uygun kapıdan geçmek zorundadır[cite: 3].
+Açık kaynaklı olarak sunulan CognitiveDroneBench, ROS ve Gazebo simülasyonu üzerinde inşa edilmiştir. İHA, klasik yarış kapılarından oluşan parkurda ilerlerken her kapı ayrımında karşısına çıkan görsel-bilişsel görevi doğru çözüp uygun kapıdan geçmek zorundadır.
 
 | Özellik | OpenVLA (Geleneksel VLA) | Reasoning VLA (Örn: DeepThinkVLA) |
 | :--- | :--- | :--- |
@@ -86,7 +87,7 @@ Açık kaynaklı olarak sunulan CognitiveDroneBench, ROS ve Gazebo simülasyonu 
 ## 4. Akıl Yürütme Tabanlı VLA ve UAV Uygulamaları
 
 ### Çeşitli Akıl Yürütme Tabanlı VLA (Reasoning-VLA) Modelleri ve Mimari Yaklaşımlar
-Görsel-Dil-Eylem (VLA) literatüründe son dönemde öne çıkan en belirgin değişim, doğrudan algıla-eyleme dök eşlemesi yapan uçtan uca modellerden, karar sürecine açık ara basamaklar ekleyen akıl yürütme tabanlı mimarilere geçiştir. Bu doğrultuda geliştirilen modeller; ara planlama adımlarını modelleme biçimlerine, mekânsal algı entegrasyonlarına ve eylem üretim hızlarına göre farklı yaklaşımlar sergilemektedir[cite: 4].
+Görsel-Dil-Eylem (VLA) literatüründe son dönemde öne çıkan en belirgin değişim, doğrudan algıla-eyleme dök eşlemesi yapan uçtan uca modellerden, karar sürecine açık ara basamaklar ekleyen akıl yürütme tabanlı mimarilere geçiştir. Bu doğrultuda geliştirilen modeller; ara planlama adımlarını modelleme biçimlerine, mekânsal algı entegrasyonlarına ve eylem üretim hızlarına göre farklı yaklaşımlar sergilemektedir.
 
 Akıl yürütme tabanlı VLA mimarilerinin kazandığı bu esneklik, modellerin yalnızca tek kollu masaüstü robotlarla veya kara taşıtlarıyla sınırlı kalmayıp, çok daha karmaşık dinamiklere sahip platformlara genişlemesini sağlamıştır. Güncel literatürde özellikle çift kollu robotik manipülasyon (bimanual manipulation) ile insansız hava araçları (İHA / UAV), VLA modellerinin çoklu serbestlik derecesi (DoF) ve eş zamanlı koordinasyon yeteneklerini test eden iki ana odak alanı haline gelmiştir.
 
@@ -126,7 +127,7 @@ Hüner gerektiren, temas odaklı ve uzun ufuklu görevlerde ise Physical Intelli
 
 Taklit öğrenme tarafında ACT (Action Chunking with Transformers) ve Diffusion Policy, modern VLA mimarilerinin temel yapı taşlarına dönüşmüştür. Mobile ALOHA projesinden doğan ACT, CVAE tabanlı eylem parçalama ve zamansal toplama (Temporal ensembling) stratejisiyle yalnızca 50 insan gösterimiyle bile dakikalar içinde eğitilebilmekte ve iki elle uzaktan kumanda (teleoperasyon) için fiili standart olmaya devam etmektedir. Columbia Üniversitesi'nin Diffusion Policy modeli ise DDPM tabanlı gürültü giderme başlığı sayesinde çok modlu uzman gösterimlerinin ortalamasını alıp davranışı çökertmek yerine çoklu çözüm yollarını pürüzsüzce modellemekte, böylece temas açısından zengin görevlerde önceki yöntemlere kıyasla %46,9'luk bir sıçrama sağlamaktadır. Tarihsel referans olarak konumlanan 35M parametreli RT-1-X ise OpenX üzerinde yeniden eğitilmiş hafif yapısıyla akademik karşılaştırmalarda baz model rolünü sürdürmektedir.
 
-2024'ten 2026'ya uzanan süreçte yaşanan en kritik mimari değişim, taklit öğrenme algoritmaları ile büyük dil modellerinin hibrit bir yapıda birleşmesidir. Günümüzde üretim odaklı ekipler tek parçalı devasa bir VLA yerine iki katmanlı bir iş bölümü tercih etmektedir: Dil anlama ve yüksek seviyeli sahne kavrayışı için ön uçta OpenVLA veya Octo gibi bir VLA çalışırken, milisaniyelik motor komutlarını ve fiziksel teması yöneten arka uçta ACT veya Diffusion Policy gibi dar, yüksek frekanslı bir politika yer almaktadır. Aynı zamanda modeller arasındaki performans farkı kapandığı için asıl darboğaz mimariden ziyade veri kalitesine kaymıştır; tutarlı kamera açıları, disiplinli teleoperasyon kayıtları ve temiz alt görev sınıflandırmaları, başarılı bir robotik dağıtımın en belirleyici unsuru haline gelmiştir[cite: 4].
+2024'ten 2026'ya uzanan süreçte yaşanan en kritik mimari değişim, taklit öğrenme algoritmaları ile büyük dil modellerinin hibrit bir yapıda birleşmesidir. Günümüzde üretim odaklı ekipler tek parçalı devasa bir VLA yerine iki katmanlı bir iş bölümü tercih etmektedir: Dil anlama ve yüksek seviyeli sahne kavrayışı için ön uçta OpenVLA veya Octo gibi bir VLA çalışırken, milisaniyelik motor komutlarını ve fiziksel teması yöneten arka uçta ACT veya Diffusion Policy gibi dar, yüksek frekanslı bir politika yer almaktadır. Aynı zamanda modeller arasındaki performans farkı kapandığı için asıl darboğaz mimariden ziyade veri kalitesine kaymıştır; tutarlı kamera açıları, disiplinli teleoperasyon kayıtları ve temiz alt görev sınıflandırmaları, başarılı bir robotik dağıtımın en belirleyici unsuru haline gelmiştir.
 
 ---
 
@@ -154,3 +155,5 @@ Taklit öğrenme tarafında ACT (Action Chunking with Transformers) ve Diffusion
 [11] M. J. Kim ve diğ., "OpenVLA: An Open-Source Vision-Language-Action Model," arXiv preprint arXiv:2406.09246, 2024. [Çevrimiçi]. Erişilebilir: https://huggingface.co/openvla/openvla-7b
 
 [12] Emergent Mind, "OpenVLA: Open Source VLA for Robotics," Emergent Mind Topics, 6 Ekim 2025. [Çevrimiçi]. Erişilebilir: https://www.emergentmind.com/topics/openvla
+
+</div>
