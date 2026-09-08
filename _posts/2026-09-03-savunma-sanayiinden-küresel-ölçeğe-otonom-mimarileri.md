@@ -49,7 +49,7 @@ HAVELSAN tarafından geliştirilen BARKAN 3 İnsansız Kara Aracı (İKA), kara 
 * Modüler silah kulesi sayesinde üzerine entegre edilen füze ve makineli tüfek sistemleri, otonom hedef tespiti ve angajman desteği ile çalışabilmektedir[cite: 2]. Bu sistemlerin EFES ve SAHA gibi saha testleri tamamlanmış olup, TSK envanterine giriş protokolleri aktif olarak yürütülmektedir[cite: 2].
 
 <p align="center">
-  <img width="700" alt="BARKAN 3 İnsansız Kara Aracı" src="https://github.com/user-attachments/assets/barkan3.jpg">
+  <img width="700" alt="BARKAN 3 İnsansız Kara Aracı" src="https://github.com/user-attachments/assets/SS-1.jpg">
 </p>
 
 ### Müşterek Dijital Birlik Mimarisi
@@ -70,7 +70,7 @@ Büyük ölçekli İHA'ların yanı sıra, asimetrik harpte dengeleri değiştir
 * **TOGAN & TUNGA-X (Taktik Keşif / Hedefleme):** Optik güdüm teknolojileri ve Edge AI algoritmaları ile donatılmış olan bu dronlar, otomatik hedef sınıflandırması yaparak sınır ve üs bölgelerinin güvenliğini sağlar[cite: 2].
 
 <p align="center">
-  <img width="700" alt="TUNGA-X Avcı Drone Sistemi" src="https://github.com/user-attachments/assets/tungax.jpg">
+  <img width="700" alt="TUNGA-X Avcı Drone Sistemi" src="https://github.com/user-attachments/assets/SS-2.jpg">
 </p>
 
 * **BARAN & Anti-Drone Sistemleri:** Mikro İHA ve kamikaze drone tehditlerini yapay zeka ile otomatik olarak algılayıp imha eden otonom hava savunma önleme konseptleridir[cite: 2]. 
@@ -78,7 +78,7 @@ Büyük ölçekli İHA'ların yanı sıra, asimetrik harpte dengeleri değiştir
 Bununla birlikte ASELSAN tarafından geliştirilen İHTAR sistemi, TV ve termal kameralardan gelen verileri sensör füzyonu ile birleştirip geliştirilmiş bilgisayarlı görü (computer vision) ile uzak mesafeden drone tehditlerini teşhis, tespit ve takip eden yapay zeka destekli bir karar verme algoritması sunmaktadır[cite: 2].
 
 <p align="center">
-  <img width="700" alt="ASELSAN İHTAR Anti-Drone Sistemi" src="https://github.com/user-attachments/assets/ihtar.jpg">
+  <img width="700" alt="ASELSAN İHTAR Anti-Drone Sistemi" src="https://github.com/user-attachments/assets/SS-3.jpg">
 </p>
 
 ---
