@@ -2,9 +2,9 @@
 
 <div align="center">
 
-[![Status](https://img.shields.io/badge/Status-Completed-brightgreen.svg)]()
-[![Field](https://img.shields.io/badge/Field-UAVs_%26_Reasoning_VLA-blue.svg)]()
-[![Author](https://img.shields.io/badge/Author-Sueda_Zeynep_Demirtas-orange.svg)]()
+<img src="https://img.shields.io/badge/Status-Completed-brightgreen.svg" alt="Status">
+<img src="https://img.shields.io/badge/Field-UAVs_%26_Reasoning_VLA-blue.svg" alt="Field">
+<img src="https://img.shields.io/badge/Author-Sueda_Zeynep_Demirtas-orange.svg" alt="Author">
 
 </div>
 
