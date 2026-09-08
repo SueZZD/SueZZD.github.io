@@ -5,8 +5,6 @@ categories: [Araştırma, Fiziksel Yapay Zeka]
 tags: [autonomous-systems, physical-ai, edge-ai]
 ---
 
-<div style="text-align: justify; text-justify: inter-word;">
-
 # Düşünen Dronelar: Otonomi Mutfağında VLA ve CognitiveDrone Devrimi
 
 <div align="center">
