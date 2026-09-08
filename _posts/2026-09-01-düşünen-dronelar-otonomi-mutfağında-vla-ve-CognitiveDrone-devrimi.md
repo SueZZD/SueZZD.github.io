@@ -40,7 +40,11 @@ Günümüzde OpenVLA'in omurga model olarak kullanıldığı, üzerine akıl yü
 ## 2. CognitiveDrone ve CognitiveDrone-R1 Mimarisi
 CognitiveDrone, birinci şahıs görüşü (FPV) kameralarından gelen görsel verileri ve doğal dil talimatlarını doğrudan uçuş kontrol komutlarına dönüştüren, hava robotlarına üst seviye bilişsel karar verme yeteneği kazandırmak amacıyla geliştirilmiş uçtan uca bir Görsel-Dil-Eylem (VLA) mimarisidir.
 
+Klasik otonom İHA yaklaşımları (RaceVLA gibi salt yarış odaklı modeller dahil) yüksek hızlı dinamik uçuşta başarılı olsa da sembol <div style="text-align: justify;">
+
 Klasik otonom İHA yaklaşımları (RaceVLA gibi salt yarış odaklı modeller dahil) yüksek hızlı dinamik uçuşta başarılı olsa da sembol anlama, insan tanıma ve mantıksal çıkarım gibi üst düzey bilişsel görevleri yerine getiremez. CognitiveDrone, bu kısıtları aşmak için 7 milyar parametreli bir VLA modeli kullanır ve doğrudan 4 boyutlu sürekli eylem vektörleri ($v_x, v_y, v_z, \omega$ - üç eksenli hız ve sapma/yaw açısal hızı) üretir. Mimari iki farklı yapılandırmayla sunulmaktadır:
+
+</div>
 
 * **CognitiveDrone (Temel Model):** Tek parçalı (monolithic) 7B VLA omurgasıyla görsel-dilsel girdileri doğrudan 10 Hz frekansta reaktif uçuş komutlarına eşler.
 * **CognitiveDrone-R1 (Gelişmiş Model):** Hızlı kontrol ile derin muhakemeyi ayıran çift sistemli (System 1 / System 2) bir yaklaşıma sahiptir:
