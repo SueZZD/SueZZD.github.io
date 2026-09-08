@@ -1,0 +1,8 @@
+---
+---
+
+/* Bütün yazıların (post içeriklerinin) iki yana yaslı olması için */
+.markdown-content p, 
+.post-content p {
+  text-align: justify !important;
+}
