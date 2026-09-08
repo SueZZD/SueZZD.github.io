@@ -2,9 +2,9 @@
 
 <div align="center">
 
-[![Status](https://img.shields.io/badge/Status-Completed-brightgreen.svg)]()
-[![Field](https://img.shields.io/badge/Field-VLA_%26_CognitiveDrone-blue.svg)]()
-[![Author](https://img.shields.io/badge/Author-Sueda_Zeynep_Demirtas-orange.svg)]()
+<img src="https://img.shields.io/badge/Status-Completed-brightgreen.svg" alt="Status">
+<img src="https://img.shields.io/badge/Field-VLA_%26_CognitiveDrone-blue.svg" alt="Field">
+<img src="https://img.shields.io/badge/Author-Sueda_Zeynep_Demirtas-orange.svg" alt="Author">
 
 </div>
 
@@ -12,8 +12,9 @@
 1. [OpenVLA: Açık Kaynaklı VLA Temel Modeli](#1-openvla-açık-kaynaklı-vla-temel-modeli)
 2. [CognitiveDrone ve CognitiveDrone-R1 Mimarisi](#2-cognitivedrone-ve-cognitivedrone-r1-mimarisi)
 3. [CognitiveDroneBench Test Ortamı ve Veri Kümesi](#3-cognitivedronebench-test-ortamı-ve-veri-kümesi)
-4. [En İyi VLA Modelleri Kıyaslaması](#4-en-iyi-vla-modelleri-kıyaslaması)
-5. [Kaynakça](#5-kaynakça)
+4. [Akıl Yürütme Tabanlı VLA ve UAV Uygulamaları](#4-akıl-yürütme-tabanlı-vla-ve-uav-uygulamaları)
+5. [En İyi VLA Modelleri Kıyaslaması](#5-en-iyi-vla-modelleri-kiyaslaması)
+6. [Kaynakça](#6-kaynakça)
 
 ---
 
@@ -74,7 +75,29 @@ Açık kaynaklı olarak sunulan CognitiveDroneBench, ROS ve Gazebo simülasyonu 
 
 ---
 
-## 4. En İyi VLA Modelleri Kıyaslaması
+## 4. Akıl Yürütme Tabanlı VLA ve UAV Uygulamaları
+
+### Çeşitli Akıl Yürütme Tabanlı VLA (Reasoning-VLA) Modelleri ve Mimari Yaklaşımlar
+Görsel-Dil-Eylem (VLA) literatüründe son dönemde öne çıkan en belirgin değişim, doğrudan algıla-eyleme dök eşlemesi yapan uçtan uca modellerden, karar sürecine açık ara basamaklar ekleyen akıl yürütme tabanlı mimarilere geçiştir. Bu doğrultuda geliştirilen modeller; ara planlama adımlarını modelleme biçimlerine, mekânsal algı entegrasyonlarına ve eylem üretim hızlarına göre farklı yaklaşımlar sergilemektedir[cite: 4].
+
+Akıl yürütme tabanlı VLA mimarilerinin kazandığı bu esneklik, modellerin yalnızca tek kollu masaüstü robotlarla veya kara taşıtlarıyla sınırlı kalmayıp, çok daha karmaşık dinamiklere sahip platformlara genişlemesini sağlamıştır. Güncel literatürde özellikle çift kollu robotik manipülasyon (bimanual manipulation) ile insansız hava araçları (İHA / UAV), VLA modellerinin çoklu serbestlik derecesi (DoF) ve eş zamanlı koordinasyon yeteneklerini test eden iki ana odak alanı haline gelmiştir.
+
+İki robot kolunun giysi katlama veya mekanik montaj gibi görevlerde senkronize çalışması ile bir hava aracının uçuş dinamiklerini kontrol ederken üzerindeki manipülatörle nesne yakalaması (aerial manipulation), yapısal ve matematiksel olarak büyük benzerlikler taşır. Her iki senaryoda da sistem, tekil bir görsel-dilsel hedeften beslenerek birbiriyle yüksek derecede eşlenik (coupled) çoklu eylem yörüngeleri üretmek zorundadır.
+
+Bu tür yüksek serbestlik dereceli ve hızlı sistemlerde, standart otoregresif eylem başlıklarının yol açtığı kuantizasyon kayıpları ile difüzyon modellerinin getirdiği yüksek çıkarım gecikmelerini aşmak adına akış eşleştirme (flow matching) ve sürekli eylem parçalama (action chunking) paradigmaları benimsenmektedir. Bu sayede model, üst seviye görsel-dilsel akıl yürütmeyi kesintiye uğratmadan yüksek frekansta (20–50 Hz) pürüzsüz ve gerçek zamanlı motor komutları üretebilmektedir.
+
+Ayrıca bu alandaki güncel yaklaşımlar, farklı kinematik yapılardan ve sensör konfigürasyonlarından gelen verilerle ortak eğitim (cross-embodiment co-training) yapmanın model genellemesini ciddi ölçüde artırdığını göstermektedir. Üst seviyede semantik muhakeme ve rota planlaması yürüten "yavaş" bir görsel-dil omurgası ile alt seviyede milisaniyelik dinamik kararları icra eden "hızlı" bir politika başlığından oluşan iki kademeli (dual-system) mimariler; İHA'ların zorlu rüzgâr/uçuş dinamiklerinde güvenli, sağlam ve uyarlanabilir bir fiziksel yapay zekâ altyapısı sunmaktadır.
+
+### İnsansız Hava Araçlarında (UAV / Drone) VLA ve Öğrenilmiş Kontrol Sistemleri
+Hava robotlarında VLA modelleri, milisaniyelik gecikme kısıtları ($\ge 100\text{ Hz}$) ve dış mekânın 3 boyutlu dinamik koşulları altında uçuş komutları ve görev planlaması üretmektedir:
+
+* **Uçtan Uca Görsel-Dilsel Navigasyon (UAV-VLA, CognitiveDrone, RaceVLA):** UAV-VLA, uydu ve hava görüntülerini işleyerek doğal dilden 100 bin uçuşluk görev planı (irtifa, rota, sensör ayarları) üretebilmektedir. CognitiveDrone, birinci şahıs kamerasından doğrudan 4B eylem ($x, y, z, \text{yaw}$) üretirken; Düşünce Zinciri (CoT) muhakemesi eklenen R1 varyantıyla karmaşık bilişsel görevleri çözer. RaceVLA ise uzman pilot verilerini "agresif apeks dönüşü" gibi sözel komutlarla eşleyerek insan benzeri yarış yörüngeleri oluşturur.
+* **Hava Manipülasyonu ve Çift Kol Entegrasyonu (DroneVLA, AIR-VLA, Flying Hand):** Hava araçlarının yalnızca uçmayıp uçarken manipülatörle nesne yakalamasını sağlayan DroneVLA, açık sözlüklü nesne tespiti (Grounding DINO) ile görsel servoyu birleştirir. AIR-VLA, hava manipülasyonu için 3000 gösterimlik güvenlik kısıtlı bir test ortamı sunar. Flying Hand ise tam tahrikli bir hekzarotor üzerine 4-DoF kol yerleştirerek, manipülasyonda kullanılan ACT (Action Chunking with Transformers) yönteminin doğrudan hava araçlarına aktarılabileceğini kanıtlamıştır. Ayrıca çift kollu hava manipülasyonu (Aerial Bimanual Harvesting), avokado hasadı gibi görevlerde bir kolun dalı sabitleyip diğer kolun meyveyi kopardığı lider-takipçi stratejisini başarıyla uygulamaktadır.
+* **Düşük Gecikmeli Görev Planlama (TypeFly, AeroAgent):** LLM'lerin serbest kod üretimindeki gecikmeyi azaltmak için TypeFly, modeli MiniSpec adı verilen yalın bir drone komut dilinde çıktı üretmeye kısıtlayarak planlama gecikmesini 500 ms'nin altına indirmiştir.
+
+---
+
+## 5. En İyi VLA Modelleri Kıyaslaması
 
 | Model | Parametreler | Lisans | Aksiyon başlığı | Donanım | En iyisi |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -99,7 +122,7 @@ Taklit öğrenme tarafında ACT (Action Chunking with Transformers) ve Diffusion
 
 ---
 
-## 5. Kaynakça
+## 6. Kaynakça
 [1] A. Lykov ve diğ., "CognitiveDrone: A VLA Model and Evaluation Benchmark for Real-Time Cognitive Task Solving and Reasoning in UAVs," arXiv preprint arXiv:2503.01378v1, 3 Mart 2025.
 
 [2] A. Lykov ve diğ., "CognitiveDrone: A VLA Model and Evaluation Benchmark for Real-Time Cognitive Task Solving and Reasoning in UAVs," Hugging Face Papers, 6 Mart 2025. [Çevrimiçi]. Erişilebilir: https://huggingface.co/papers/2503.01378
